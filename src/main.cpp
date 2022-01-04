@@ -1,26 +1,26 @@
 #include <Arduino.h>
-#define touchPin 4
-#define ledPin 16
-#define threshold 20
+#define TOUCH_PIN 4
+#define LED_PIN 16
+#define THRESHOLD 20
 //int touchValue{};
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   delay(1000);
   Serial.println("ESP32 Touch Test");
-  pinMode(ledPin, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int touchValue{touchRead(touchPin)};
+  int touchValue{touchRead(TOUCH_PIN)};
   
-  if(touchValue < threshold){
-    digitalWrite(ledPin, HIGH);
+  if(touchValue < THRESHOLD){
+    digitalWrite(LED_PIN, HIGH);
 
   }
   else{
-    digitalWrite(ledPin, LOW);
+    digitalWrite(LED_PIN, LOW);
   }
   
 }
